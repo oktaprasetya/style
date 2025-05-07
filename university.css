@@ -1,440 +1,416 @@
-<style>
-         .static_page .item-post h1.post-title {Display: none;}
-         .static_page .item-post .post-body {padding: 0px;}
-         .post-body table {border: none;}
-         .post-body table td, .post-body table th {border: none;}
-         .item #content-wrapper {margin:0px;}
-         .post-body h1 {color: white; margin-left: 10px; margin-bottom: 5px;}
-         .post-body p {margin-bottom: 0px;} 
-      </style>
-      
-      <style>
-         body {
-         margin: 0;
-         padding: 0;
-         font-family: Arial, sans-serif;
-         }
-         .university-profile-header {
-         position: relative;
-         width: 100%;
-         margin-bottom: -10px;
-         border: 5px solid #f1c232;
-         border-radius: 15px 15px 0px 0px;
-         }
-         .university-profile-image {
-         width: 100%;
-         height: auto;
-         border-radius: 10px 10px 0px 0px;
-         }
-         .university-profile-overlay {
-         position: absolute;
-         bottom: 0;
-         left: 0;
-         width: 100%;
-         display: flex;
-         align-items: center;
-         padding: 10px;
-         padding-left: 30px;
-         background: rgba(241, 194, 50, 0.5); /* Background transparent */
-         }
-         .university-profile-logo {
-         width: 70px;
-         margin-right: 20px;
-         opacity: 1;
-         }
-         .university-profile-info {
-         color: #fff;
-         opacity: 1;
-         }
-         .university-profile-name {
-         margin: 0;
-         color: white;
-         font-size: 18px;
-         font-weight: bold;
-         }
-         .university-profile-location {
-         margin-left: 10px;
-         font-size: 14px;
-         margin-top: -5px;
-         font-weight: bold;
-         }
-         @media (max-width: 500px) {
-         .university-profile-logo {
+<style> .static_page .item-post h1.post-title {
+    Display: none;
+}
+ .static_page .item-post .post-body {
+    padding: 0px;
+}
+ .post-body table {
+    border: none;
+}
+ .post-body table td, .post-body table th {
+    border: none;
+}
+ .item #content-wrapper {
+    margin:0px;
+}
+ .post-body h1 {
+    color: white;
+     margin-left: 10px;
+     margin-bottom: 5px;
+}
+ .post-body p {
+    margin-bottom: 0px;
+}
+ </style> <style> body {
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif;
+}
+ .university-profile-header {
+     position: relative;
+     width: 100%;
+     margin-bottom: -10px;
+     border: 5px solid #f1c232;
+     border-radius: 15px 15px 0px 0px;
+}
+ .university-profile-image {
+     width: 100%;
+     height: auto;
+     border-radius: 10px 10px 0px 0px;
+}
+ .university-profile-overlay {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     padding: 10px;
+     padding-left: 30px;
+     background: rgba(241, 194, 50, 0.5);
+    /* Background transparent */
+}
+ .university-profile-logo {
+     width: 70px;
+     margin-right: 20px;
+     opacity: 1;
+}
+ .university-profile-info {
+     color: #fff;
+     opacity: 1;
+}
+ .university-profile-name {
+     margin: 0;
+     color: white;
+     font-size: 18px;
+     font-weight: bold;
+}
+ .university-profile-location {
+     margin-left: 10px;
+     font-size: 14px;
+     margin-top: -5px;
+     font-weight: bold;
+}
+ @media (max-width: 500px) {
+     .university-profile-logo {
          height: 50px;
-         width: 50px; /* Set width and height to 50px for small screens */
+         width: 50px;
+        /* Set width and height to 50px for small screens */
          margin-left: 10px;
-         }
-         .university-profile-overlay {
+    }
+     .university-profile-overlay {
          height: 100%;
          padding-left: 10px;
          padding-top: 60px;
-         }
-         .university-profile-location{font-weight:bold; margin-top: -5px;}
-         .post-body h1{font-size: 18px; margin-top:20px; margin-bottom: 0px;}
-         }
-      </style>
-     
-     <style>
-         .popup {
-         display: none;
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         background: white;
-         width: 90%;
-         max-width: 500px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-         border-radius: 8px;
-         z-index: 1000;
-         }
-         .popup-content {
-         max-height: 80vh; /* Batasi tinggi popup agar tidak keluar layar */
-         overflow-y: auto; /* Tambahkan scroll jika konten terlalu panjang */
-         padding: 20px;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         }
-         .popup-text {
-         font-size: 14px;
-         color: #555;
-         font-weight: normal;
-      	 }
-         .close {
-         position: absolute;
-         right: 15px;
-         top: 10px;
-         font-size: 20px;
-         cursor: pointer;
-         }
-      </style>
-      <style>
-        .dropdown-container {
-            position: relative;
-            width: 100%;
-            text-align: center;
-        }
-        .dropdown-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .dropdown-content {
-            display: none;
-            background: white;
-            width: 100%;
-            max-width: 500px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: left;
-        }
-        .dropdown-content.active {
-            display: block;
-        }
-        .popup-text {
-            font-size: 14px;
-            color: #555;
-        }
-        .popup-links {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 5px;
-            width: 100%;
-        }
-
-        .popup-button {
-            color: #007bff;
-            padding: 10px;
-            text-align: center;
-            font-size: 12px;
-            flex: 1;
-        }
-
-        .popup-button:hover {
-            background-color: #0056b3;
-            color: white;
-            
-        }
-        
-	</style>
-     
-     <style>
-    .fade-in {
-        opacity: 0;
-        transform: translateY(10px);
-        animation: fadeInAnimation 0.3s ease-in-out forwards;
     }
-
-    @keyframes fadeInAnimation {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+     .university-profile-location{
+        font-weight:bold;
+         margin-top: -5px;
     }
-	</style>
-
-<style>
+     .post-body h1{
+        font-size: 18px;
+         margin-top:20px;
+         margin-bottom: 0px;
+    }
+}
+ </style> <style> .popup {
+     display: none;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: white;
+     width: 90%;
+     max-width: 500px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     border-radius: 8px;
+     z-index: 1000;
+}
+ .popup-content {
+     max-height: 80vh;
+    /* Batasi tinggi popup agar tidak keluar layar */
+     overflow-y: auto;
+    /* Tambahkan scroll jika konten terlalu panjang */
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+ .popup-text {
+     font-size: 14px;
+     color: #555;
+     font-weight: normal;
+}
+ .close {
+     position: absolute;
+     right: 15px;
+     top: 10px;
+     font-size: 20px;
+     cursor: pointer;
+}
+ </style> <style> .dropdown-container {
+     position: relative;
+     width: 100%;
+     text-align: center;
+}
+ .dropdown-button {
+     background-color: #007bff;
+     color: white;
+     padding: 10px 20px;
+     font-size: 16px;
+     border: none;
+     cursor: pointer;
+     border-radius: 5px;
+}
+ .dropdown-content {
+     display: none;
+     background: white;
+     width: 100%;
+     max-width: 500px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     border-radius: 8px;
+     padding: 20px;
+     text-align: left;
+}
+ .dropdown-content.active {
+     display: block;
+}
+ .popup-text {
+     font-size: 14px;
+     color: #555;
+}
+ .popup-links {
+     display: flex;
+     gap: 10px;
+     margin-bottom: 5px;
+     width: 100%;
+}
+ .popup-button {
+     color: #007bff;
+     padding: 10px;
+     text-align: center;
+     font-size: 12px;
+     flex: 1;
+}
+ .popup-button:hover {
+     background-color: #0056b3;
+     color: white;
+}
+ </style> <style> .fade-in {
+     opacity: 0;
+     transform: translateY(10px);
+     animation: fadeInAnimation 0.3s ease-in-out forwards;
+}
+ @keyframes fadeInAnimation {
+     from {
+         opacity: 0;
+         transform: translateY(10px);
+    }
+     to {
+         opacity: 1;
+         transform: translateY(0);
+    }
+}
+ </style> <style> 
 /* CSS untuk Instance 2 */
-:root {
-    --primary-2: #3B82F6;
-    --error-2: #EF4444;
-    --success-2: #10B981;
-    --background-2: #F8FAFC;
-    --text-2: #1E293B;
-    --accent-2: #7C3AED;
+ :root {
+     --primary-2: #3B82F6;
+     --error-2: #EF4444;
+     --success-2: #10B981;
+     --background-2: #F8FAFC;
+     --text-2: #1E293B;
+     --accent-2: #7C3AED;
 }
-
-.scholarship-container-2 {
-    width: 100%;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+ .scholarship-container-2 {
+     width: 100%;
+     max-width: 1200px;
+     margin: 2rem auto;
+     padding: 0 1rem;
 }
-
-.scholarship-container__search-box-2 {
-    margin: 2rem 0;
-    position: relative;
-	width: 100%;
-  	margin-left: auto;
-    margin-right: auto;
+ .scholarship-container__search-box-2 {
+     margin: 2rem 0;
+     position: relative;
+     width: 100%;
+     margin-left: auto;
+     margin-right: auto;
 }
-
-.scholarship-container__table-wrapper-2 {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-    transition: transform 0.2s ease;
+ .scholarship-container__table-wrapper-2 {
+     background: white;
+     border-radius: 1rem;
+     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+     overflow-x: auto;
+     transition: transform 0.2s ease;
 }
-
-.scholarship-container__table-wrapper-2:hover {
-    transform: translateY(-2px);
+ .scholarship-container__table-wrapper-2:hover {
+     transform: translateY(-2px);
 }
-
-.scholarship-table-2 {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
+ .scholarship-table-2 {
+     width: 100%;
+     border-collapse: collapse;
+     font-size: 0.95rem;
 }
-
-.scholarship-table__header-2 {
-    background: linear-gradient(135deg, var(--primary-2) 0%, #1D4ED8 100%);
-    color: white;
-    font-weight: 600;
-    position: sticky;
-    top: 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ .scholarship-table__header-2 {
+     background: linear-gradient(135deg, var(--primary-2) 0%, #1D4ED8 100%);
+     color: white;
+     font-weight: 600;
+     position: sticky;
+     top: 0;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
-.scholarship-table__header-2:first-child {
-    border-radius: 1rem 0 0 0;
+ .scholarship-table__header-2:first-child {
+     border-radius: 1rem 0 0 0;
 }
-
-.scholarship-table__header-2:last-child {
-    border-radius: 0 1rem 0 0;
+ .scholarship-table__header-2:last-child {
+     border-radius: 0 1rem 0 0;
 }
-
-.scholarship-table__cell-2 {
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid #F1F5F9;
-    vertical-align: middle;
+ .scholarship-table__cell-2 {
+     padding: 1.25rem 1.5rem;
+     border-bottom: 1px solid #F1F5F9;
+     vertical-align: middle;
 }
-
-.scholarship-table__row-2:hover {
-    background: #F8FAFC;
-    transform: scale(1.005);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+ .scholarship-table__row-2:hover {
+     background: #F8FAFC;
+     transform: scale(1.005);
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
-
-.scholarship-table__detail-button-2 {
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, var(--primary-2) 0%, #1D4ED8 100%);
-    color: white;
-    border-radius: 0.75rem;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+ .scholarship-table__detail-button-2 {
+     padding: 0.75rem 1.5rem;
+     background: linear-gradient(135deg, var(--primary-2) 0%, #1D4ED8 100%);
+     color: white;
+     border-radius: 0.75rem;
+     font-weight: 500;
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5rem;
+     border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
-.scholarship-table__detail-button-2:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+ .scholarship-table__detail-button-2:hover {
+     transform: translateY(-1px);
+     box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
 }
-
-.scholarship-table__detail-button-2:active {
-    transform: translateY(0);
+ .scholarship-table__detail-button-2:active {
+     transform: translateY(0);
 }
-
-.pagination-2 {
-    margin: 2rem 0;
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
+ .pagination-2 {
+     margin: 2rem 0;
+     display: flex;
+     gap: 0.5rem;
+     justify-content: center;
+     flex-wrap: wrap;
 }
-
-.pagination__button-2 {
-    padding: 0.5rem 1rem;
-    border: 1px solid #E2E8F0;
-    background: white;
-  	color: blue;
-    border-radius: 0.5rem;
-    transition: all 0.2s ease;
-    min-width: 40px;
+ .pagination__button-2 {
+     padding: 0.5rem 1rem;
+     border: 1px solid #E2E8F0;
+     background: white;
+     color: blue;
+     border-radius: 0.5rem;
+     transition: all 0.2s ease;
+     min-width: 40px;
 }
-
-.pagination__button--active-2 {
-    background: var(--primary-2);
-    color: white;
-    border-color: var(--primary-2);
-    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+ .pagination__button--active-2 {
+     background: var(--primary-2);
+     color: white;
+     border-color: var(--primary-2);
+     box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
-
-.pagination__button-2:hover:not(.pagination__button--active-2) {
-    background: #F1F5F9;
+ .pagination__button-2:hover:not(.pagination__button--active-2) {
+     background: #F1F5F9;
 }
-
 /* CSS untuk Popup */
-.popup__overlay-2 {
-    display: none; /* Tambahkan ini untuk menyembunyikan popup awal */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
-    z-index: 1000;
+ .popup__overlay-2 {
+     display: none;
+    /* Tambahkan ini untuk menyembunyikan popup awal */
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.7);
+     backdrop-filter: blur(4px);
+     z-index: 1000;
 }
-
-.popup__content-2 {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--background-2);
-    padding: 2rem;
-    border-radius: 1rem;
-    width: 90%;
-    max-width: 600px;
+ .popup__content-2 {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: var(--background-2);
+     padding: 2rem;
+     border-radius: 1rem;
+     width: 90%;
+     max-width: 600px;
     /* Tetap pertahankan properti animasi dan lainnya */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    animation: popupEntrance-2 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+     animation: popupEntrance-2 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 /* Tambahkan ini untuk styling header popup */
-.popup__header-2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
+ .popup__header-2 {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 1.5rem;
 }
-
-.popup__header-2 h2 {
-    font-size: 1.5rem;
-    color: var(--text-2);
+ .popup__header-2 h2 {
+     font-size: 1.5rem;
+     color: var(--text-2);
 }
-
-.popup__header-2 button {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--text-2);
+ .popup__header-2 button {
+     background: none;
+     border: none;
+     font-size: 2rem;
+     cursor: pointer;
+     color: var(--text-2);
 }
-
-@keyframes popupEntrance-2 {
-    from {
-        transform: translate(-50%, -50%) scale(0.95);
-        opacity: 0;
+ @keyframes popupEntrance-2 {
+     from {
+         transform: translate(-50%, -50%) scale(0.95);
+         opacity: 0;
     }
-    to {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
+     to {
+         transform: translate(-50%, -50%) scale(1);
+         opacity: 1;
     }
 }
-
-.detail__item-2 {
-    background: rgba(241, 245, 249, 0.5);
-    border: 1px solid #E2E8F0;
-    backdrop-filter: blur(4px);
+ .detail__item-2 {
+     background: rgba(241, 245, 249, 0.5);
+     border: 1px solid #E2E8F0;
+     backdrop-filter: blur(4px);
 }
-
-.detail__label-2 {
-    color: var(--primary-2);
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+ .detail__label-2 {
+     color: var(--primary-2);
+     font-size: 0.9rem;
+     letter-spacing: 0.5px;
 }
-
-.loading-2 {
-    position: relative;
-    overflow: hidden;
+ .loading-2 {
+     position: relative;
+     overflow: hidden;
 }
-
-.loading-2::after {
-    content: "";
-    position: absolute;
-    left: -100%;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    animation: loadingShimmer-2 1.5s infinite;
+ .loading-2::after {
+     content: "";
+     position: absolute;
+     left: -100%;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+     animation: loadingShimmer-2 1.5s infinite;
 }
-
-@keyframes loadingShimmer-2 {
-    100% {
-        left: 100%;
+ @keyframes loadingShimmer-2 {
+     100% {
+         left: 100%;
     }
 }
-
-#searchInput2 {
-  	width: 100%;
-    padding: 1rem 2rem;
-    border: 2px solid #E2E8F0;
-    border-radius: 50px;
-    font-size: 1rem;
-    transition: all 0.3s;
-    background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2394A3B8" width="24" height="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat 1rem center;
-    background-size: 20px;
-    padding-left: 3.5rem;
+ #searchInput2 {
+     width: 100%;
+     padding: 1rem 2rem;
+     border: 2px solid #E2E8F0;
+     border-radius: 50px;
+     font-size: 1rem;
+     transition: all 0.3s;
+     background: white url('data:image/svg+xml;
+    utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2394A3B8" width="24" height="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat 1rem center;
+     background-size: 20px;
+     padding-left: 3.5rem;
 }
-
-#searchInput2:focus {
-    border-color: var(--primary-2);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+ #searchInput2:focus {
+     border-color: var(--primary-2);
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
-
-@media (max-width: 768px) {
-    .scholarship-container-2 {
-        padding: 0 0.5rem;
+ @media (max-width: 768px) {
+     .scholarship-container-2 {
+         padding: 0 0.5rem;
     }
-    
-    .scholarship-table__cell-2 {
-        padding: 1rem;
+     .scholarship-table__cell-2 {
+         padding: 1rem;
     }
-    
-    .scholarship-table__detail-button-2 {
-        padding: 0.5rem 1rem;
-        font-size: 0.875rem;
+     .scholarship-table__detail-button-2 {
+         padding: 0.5rem 1rem;
+         font-size: 0.875rem;
     }
-    
-    .popup__content-2 {
-        width: 95%;
+     .popup__content-2 {
+         width: 95%;
     }
 }
-</style>
+ </style>
